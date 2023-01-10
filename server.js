@@ -6,7 +6,7 @@ app.set("vie engine", "ejs")
 app.use(express.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
-    res.render('index.ejs')
+    res.render('notes.ejs')
 })
 
 app.get("/notes", async(req, res) =>{

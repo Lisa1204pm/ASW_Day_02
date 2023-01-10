@@ -5,27 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>All notes</title>
+    <title>My App</title>
 </head>
 <body>
-    <h2>Notes</h2>
-
-    <!-- <form action="/notes" method="get">
-        <label for="searchInput">Search:</label>
-        <input type="text" name="searchTerm" id="searchInput">
-        <button>Search</button>
-    </form> -->
-
-    <ul>
-        <% notes.forEach(note => {%>
-            <li>
-                <h2><%= note.title %></h2>
-                <p><%= note.contents.substring(0, 200) %>...</p>
-                <a href="/notes/<%= note.id %>">View More</a>
-            </li>    
-        <% }) %>
-    </ul>
-
-    <a href="/createNote">Create Note</a>
+    <h1>My Web Page</h1>
+    <h2><%= Date() %></h2>
+    <img src="/200.jpg" alt="background">
 </body>
 </html>

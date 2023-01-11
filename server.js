@@ -5,10 +5,14 @@ const app = express()
 app.set("vie engine", "ejs")
 app.use(express.urlencoded({extended: true}))
 
+app.get('/', (req, res) => {
+    res.render('index.ejs')
+})
+
 app.get("/notes", async(req, res) =>{
   // const searchTerm = req.query.searchTerm;
   const notes = await database.getNotes()
-  res.render("notes.ejs",{
+  res.render("index.ejs",{
     notes,
   })
 })

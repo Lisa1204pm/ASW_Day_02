@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 app.get("/notes", async(req, res) =>{
   // const searchTerm = req.query.searchTerm;
   const notes = await database.getNotes()
-  res.render("index.ejs",{
+  res.render("notes.ejs",{
     notes,
   })
 })

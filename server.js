@@ -5,8 +5,12 @@ const app = express()
 app.set("vie engine", "ejs")
 app.use(express.urlencoded({extended: true}))
 
-app.get('/', (req, res) => {
-    res.render('index.ejs')
+app.get('/', async(req, res) => {
+  // const searchTerm = req.query.searchTerm;
+  const notes = await database.getNotes()
+  res.render("index.ejs",{
+    notes,
+  })
 })
 
 app.get("/notes", async(req, res) =>{
@@ -21,7 +25,7 @@ app.get("/notes/:id", async (req, res) => {
   const id = +req.params.id
   const note = await database.getNote(id)
   if(!note){
-    res.status(404).render("note4040.ejs")
+    res.status(404).render("note404.ejs")
     return
   }
 
